@@ -39,15 +39,15 @@ export const CircleWarning = styled.div`
 
 export const Details = styled.div`
   p {
-    :first-of-type {
-      color: #c64d32;
+    color: #c64d32;
 
-      text-decoration: inherit;
+    margin-bottom: 8px;
 
-      margin-bottom: 8px;
+    font-size: 14px;
+  }
 
-      cursor: inherit;
-    }
+  button {
+    border: none;
 
     color: #3d485f;
 

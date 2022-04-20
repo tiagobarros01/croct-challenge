@@ -25,7 +25,9 @@ export function RejectedFile({ action }: RejectedFileProps) {
         <Details>
           <p>Sorry, the upload failed.</p>
 
-          <p onClick={action}>Try again</p>
+          <button type="button" onClick={action}>
+            Try again
+          </button>
         </Details>
       </Content>
 
