@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { ComponentPropsWithoutRef, useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Cropper from "react-easy-crop";
 import type { Area, Point } from "react-easy-crop/types";
@@ -30,11 +30,11 @@ type FileProps = {
   webkitRelativePath: string;
 };
 
-type AvatarUploadProps = {
+type AvatarUploadProps = ComponentPropsWithoutRef<"div"> & {
   action(croppedImage: GetCroppedImageReturn): void;
 };
 
-export function AvatarUpload({ action }: AvatarUploadProps) {
+export function AvatarUpload({ action, ...rest }: AvatarUploadProps) {
   const [fileImage, setFileImage] = useState<FileProps[]>([]);
   const [hasRejectedFile, setHasRejectedFile] = useState(false);
 
@@ -180,6 +180,7 @@ export function AvatarUpload({ action }: AvatarUploadProps) {
     <Container
       isActive={isDragActive}
       {...getRootProps({ className: "dropzone" })}
+      {...rest}
     >
       <Content>
         <div>

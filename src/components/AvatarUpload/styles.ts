@@ -67,30 +67,27 @@ export const CloseContainer = styled.div`
   cursor: pointer;
 `;
 
-export const ContainerAcceptedFile = styled.div`
-  width: 40%;
-  height: 180px;
-
-  background: #f2f5f8;
-
-  padding: 32px;
-
-  display: flex;
+export const ContainerAcceptedFile = styled(Container)<any>`
+  border: none;
 
   align-items: flex-start;
   justify-content: space-between;
 
   gap: 3.75rem;
 
-  div:first-child {
-    display: flex;
+  cursor: inherit;
 
-    flex: 1;
+  div {
+    :first-child {
+      display: flex;
 
-    flex-direction: row;
-    align-items: center;
+      flex: 1;
 
-    gap: 32px;
+      flex-direction: row;
+      align-items: center;
+
+      gap: 32px;
+    }
   }
 `;
 

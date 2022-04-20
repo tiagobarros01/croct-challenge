@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 import { AiFillExclamationCircle } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 
@@ -10,13 +10,13 @@ import {
   Details,
 } from "./styles";
 
-type RejectedFileProps = {
+type RejectedFileProps = ComponentPropsWithoutRef<"div"> & {
   action(): void;
 };
 
-export function RejectedFile({ action }: RejectedFileProps) {
+export function RejectedFile({ action, ...rest }: RejectedFileProps) {
   return (
-    <Container>
+    <Container {...rest}>
       <Content>
         <CircleWarning>
           <AiFillExclamationCircle size="20" color="#fff" />
