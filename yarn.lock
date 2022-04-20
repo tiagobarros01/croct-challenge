@@ -1827,6 +1827,11 @@ node-releases@^2.0.2:
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.3.tgz"
   integrity sha512-maHFz6OLqYxz+VQyCAtA3PTX4UP/53pa05fyDNc9CwjvJ0yEh6+xBwKsgCxMNhS8taUKBFYxfuiaD9U/55iFaw==
 
+normalize-wheel@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/normalize-wheel/-/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
+  integrity sha1-rsiGr/2wRQcNhWRH32Ls+GFG7EU=
+
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
@@ -2031,6 +2036,14 @@ react-dropzone@^12.0.5:
     attr-accept "^2.2.2"
     file-selector "^0.4.0"
     prop-types "^15.8.1"
+
+react-easy-crop@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/react-easy-crop/-/react-easy-crop-4.1.4.tgz#71543f7156f038b37bc45c4b7eb141173e623d38"
+  integrity sha512-Gw07jxdeJAGQAFybyNa2HYzviNjNJ3lyNTEApbA0zHcZ9N8f77iH3w1dEB5PbxbrG+LXvxFmMPNgMBoDpz27tQ==
+  dependencies:
+    normalize-wheel "^1.0.1"
+    tslib "2.0.1"
 
 react-icons@^4.3.1:
   version "4.3.1"
@@ -2278,6 +2291,11 @@ tsconfig-paths@^3.14.1:
     json5 "^1.0.1"
     minimist "^1.2.6"
     strip-bom "^3.0.0"
+
+tslib@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
+  integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 
 tslib@^1.8.1:
   version "1.14.1"
