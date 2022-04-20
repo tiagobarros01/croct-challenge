@@ -5,8 +5,8 @@ import type { Area, Point } from "react-easy-crop/types";
 import { BiImage } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 
+import type { GetCroppedImageReturn } from "../../@types/CroppedImage";
 import { getCroppedImg } from "../../utils/cropImage";
-import { GetCroppedImageReturn } from "../@types/CroppedImage";
 import { RejectedFile } from "./RejectedFile";
 import {
   AvatarContainer,
@@ -14,6 +14,8 @@ import {
   Container,
   ContainerAcceptedFile,
   Content,
+  ContentCroppedImage,
+  CroppedImageContainer,
   Details,
 } from "./styles";
 
@@ -57,6 +59,7 @@ export function AvatarUpload({ action }: AvatarUploadProps) {
       })
     );
 
+    setCroppedImage({} as GetCroppedImageReturn);
     setFileImage(objectFile);
   }, []);
 
@@ -72,6 +75,7 @@ export function AvatarUpload({ action }: AvatarUploadProps) {
   const handleTryAgain = () => {
     setHasRejectedFile(false);
     setFileImage([]);
+    setCroppedImage({} as GetCroppedImageReturn);
   };
 
   const cropImage = async () => {
@@ -90,9 +94,12 @@ export function AvatarUpload({ action }: AvatarUploadProps) {
     }
   };
 
-  return fileImage.length ? (
-    <ContainerAcceptedFile>
-      <div>
+  if (!!fileImage.length && !!croppedImage.file) {
+    return (
+      <CroppedImageContainer
+        isActive={isDragActive}
+        {...getRootProps({ className: "dropzone" })}
+      >
         <AvatarContainer>
           <Cropper
             image={fileImage[0].preview}
@@ -105,35 +112,71 @@ export function AvatarUpload({ action }: AvatarUploadProps) {
           />
         </AvatarContainer>
 
-        <Details>
+        <ContentCroppedImage>
           <div>
-            <p>Crop</p>
+            <BiImage size="16" />
 
-            <input
-              type="range"
-              value={zoom}
-              min={1}
-              max={3}
-              step={0.1}
-              aria-labelledby="Zoom"
-              onChange={(event) => setZoom(Number(event.target.value))}
-              className="slider"
-            />
+            <p>Organization Logo</p>
           </div>
 
-          <button type="button" onClick={cropImage}>
-            Save
-          </button>
-        </Details>
-      </div>
+          <p>Drop the image here or click to browse</p>
 
-      <CloseContainer onClick={handleTryAgain}>
-        <IoClose size="24" color="#677489" />
-      </CloseContainer>
-    </ContainerAcceptedFile>
-  ) : hasRejectedFile ? (
-    <RejectedFile action={handleTryAgain} />
-  ) : (
+          <input {...getInputProps()} />
+        </ContentCroppedImage>
+      </CroppedImageContainer>
+    );
+  }
+
+  if (fileImage.length) {
+    return (
+      <ContainerAcceptedFile>
+        <div>
+          <AvatarContainer>
+            <Cropper
+              image={fileImage[0].preview}
+              crop={crop}
+              zoom={zoom}
+              aspect={4 / 3}
+              onCropChange={setCrop}
+              onCropComplete={onCropComplete}
+              onZoomChange={setZoom}
+            />
+          </AvatarContainer>
+
+          <Details>
+            <div>
+              <p>Crop</p>
+
+              <input
+                type="range"
+                value={zoom}
+                min={1}
+                max={3}
+                step={0.1}
+                aria-labelledby="Zoom"
+                onChange={(event) => setZoom(Number(event.target.value))}
+                className="slider"
+              />
+            </div>
+
+            <button type="button" onClick={cropImage}>
+              Save
+            </button>
+          </Details>
+        </div>
+
+        <CloseContainer onClick={handleTryAgain}>
+          <IoClose size="24" color="#677489" />
+        </CloseContainer>
+      </ContainerAcceptedFile>
+    );
+  }
+
+  if (hasRejectedFile) {
+    return <RejectedFile action={handleTryAgain} />;
+  }
+
+  return (
     <Container
       isActive={isDragActive}
       {...getRootProps({ className: "dropzone" })}

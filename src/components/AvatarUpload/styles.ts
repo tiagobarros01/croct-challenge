@@ -80,6 +80,8 @@ export const ContainerAcceptedFile = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 
+  gap: 3.75rem;
+
   div:first-child {
     display: flex;
 
@@ -159,8 +161,7 @@ export const Details = styled.div`
     background: #3d485f;
     color: #fff;
 
-    padding: 10px;
-    padding-inline: 42px;
+    padding: 0.625rem 2.625rem;
 
     border: 0;
 
@@ -169,5 +170,41 @@ export const Details = styled.div`
     border-radius: 16px;
 
     cursor: pointer;
+  }
+`;
+
+export const CroppedImageContainer = styled(Container)`
+  justify-content: initial;
+`;
+
+export const ContentCroppedImage = styled.div`
+  display: flex;
+
+  flex: 1;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  > div {
+    p {
+      color: #495567;
+      font-weight: 500;
+    }
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+  }
+
+  p {
+    color: #677489;
+
+    font-size: 14px;
   }
 `;
