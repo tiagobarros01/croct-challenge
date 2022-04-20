@@ -6,6 +6,7 @@ import { BiImage } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 
 import { getCroppedImg } from "../../utils/cropImage";
+import { GetCroppedImageReturn } from "../@types/CroppedImage";
 import { RejectedFile } from "./RejectedFile";
 import {
   AvatarContainer,
@@ -27,23 +28,20 @@ type FileProps = {
   webkitRelativePath: string;
 };
 
-type CroppedImageProps = {
-  file: Blob | null;
-  url: string;
+type AvatarUploadProps = {
+  action(croppedImage: GetCroppedImageReturn): void;
 };
 
-export function AvatarUpload() {
+export function AvatarUpload({ action }: AvatarUploadProps) {
   const [fileImage, setFileImage] = useState<FileProps[]>([]);
   const [hasRejectedFile, setHasRejectedFile] = useState(false);
 
   const [crop, setCrop] = useState<Point>({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
-  const [croppedImage, setCroppedImage] = useState<CroppedImageProps>(
-    {} as CroppedImageProps
+  const [croppedImage, setCroppedImage] = useState<GetCroppedImageReturn>(
+    {} as GetCroppedImageReturn
   );
-
-  console.log(croppedImage);
 
   const onCropComplete = useCallback(
     (croppedArea: Area, croppedAreaInPixels: Area) => {
@@ -86,6 +84,7 @@ export function AvatarUpload() {
       });
 
       setCroppedImage(croppedImg);
+      action(croppedImg);
     } catch (err) {
       console.log(err);
     }
