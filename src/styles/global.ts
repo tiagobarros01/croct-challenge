@@ -8,9 +8,9 @@ export const GlobalStyles = css`
   }
 
   body {
-    background: #eee;
+    background: #fff;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
 
     overflow: hidden;
   }
