@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div<{ isActive: boolean }>`
   width: 40%;
-  height: 180px;
+  height: 11.25rem;
 
   background: #f2f5f8;
 
-  border: 2px dashed;
+  border: 0.125rem dashed;
 
   ${({ isActive }) => {
     if (isActive) {
@@ -21,14 +21,14 @@ export const Container = styled.div<{ isActive: boolean }>`
     `;
   }}
 
-  border-radius: 8px;
+  border-radius: 0.5rem;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  padding: 32px;
+  padding: 2rem;
 
   cursor: pointer;
 `;
@@ -40,15 +40,15 @@ export const Content = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  gap: 8px;
+  gap: 0.5rem;
 
   p {
     color: #677489;
 
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
-  > div {
+  div {
     p {
       color: #495567;
       font-weight: 500;
@@ -59,7 +59,7 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
 
-    gap: 12px;
+    gap: 0.75rem;
   }
 `;
 
@@ -67,7 +67,7 @@ export const CloseContainer = styled.div`
   cursor: pointer;
 `;
 
-export const ContainerAcceptedFile = styled(Container)<any>`
+export const AcceptedFileContainer = styled(Container)<any>`
   border: none;
 
   align-items: flex-start;
@@ -76,24 +76,22 @@ export const ContainerAcceptedFile = styled(Container)<any>`
   gap: 3.75rem;
 
   cursor: inherit;
+`;
 
-  div {
-    :first-child {
-      display: flex;
+export const AcceptedFileContent = styled.div`
+  display: flex;
 
-      flex: 1;
+  flex: 1;
 
-      flex-direction: row;
-      align-items: center;
+  flex-direction: row;
+  align-items: center;
 
-      gap: 32px;
-    }
-  }
+  gap: 2rem;
 `;
 
 export const AvatarContainer = styled.div`
-  max-width: 114px;
-  height: 114px;
+  max-width: 7.125rem;
+  height: 7.125rem;
 
   border-radius: 100%;
 
@@ -133,20 +131,20 @@ export const Details = styled.div`
     align-items: flex-start !important;
     flex-direction: column !important;
 
-    margin-bottom: 35px;
+    margin-bottom: 2.25rem;
 
     p {
       color: #677489;
 
-      font-size: 14px;
+      font-size: 0.875rem;
 
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
 
     input {
       accent-color: #3f80ff;
 
-      height: 2px;
+      height: 0.125rem;
 
       width: 100%;
     }
@@ -162,9 +160,9 @@ export const Details = styled.div`
 
     border: 0;
 
-    font-size: 14px;
+    font-size: 0.875rem;
 
-    border-radius: 16px;
+    border-radius: 1rem;
 
     cursor: pointer;
   }
@@ -183,9 +181,9 @@ export const ContentCroppedImage = styled.div`
 
   flex-direction: column;
 
-  gap: 8px;
+  gap: 0.5rem;
 
-  > div {
+  div {
     p {
       color: #495567;
       font-weight: 500;
@@ -196,12 +194,12 @@ export const ContentCroppedImage = styled.div`
     align-items: center;
     justify-content: center;
 
-    gap: 12px;
+    gap: 0.75rem;
   }
 
   p {
     color: #677489;
 
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 `;

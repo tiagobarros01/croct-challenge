@@ -9,10 +9,11 @@ import type { GetCroppedImageReturn } from "../../@types/CroppedImage";
 import { getCroppedImg } from "../../utils/cropImage";
 import { RejectedFile } from "./RejectedFile";
 import {
+  AcceptedFileContent,
   AvatarContainer,
   CloseContainer,
   Container,
-  ContainerAcceptedFile,
+  AcceptedFileContainer,
   Content,
   ContentCroppedImage,
   CroppedImageContainer,
@@ -129,8 +130,8 @@ export function AvatarUpload({ action, ...rest }: AvatarUploadProps) {
 
   if (fileImage.length) {
     return (
-      <ContainerAcceptedFile>
-        <div>
+      <AcceptedFileContainer>
+        <AcceptedFileContent>
           <AvatarContainer>
             <Cropper
               image={fileImage[0].preview}
@@ -163,12 +164,12 @@ export function AvatarUpload({ action, ...rest }: AvatarUploadProps) {
               Save
             </button>
           </Details>
-        </div>
+        </AcceptedFileContent>
 
         <CloseContainer onClick={handleTryAgain}>
           <IoClose size="24" color="#677489" />
         </CloseContainer>
-      </ContainerAcceptedFile>
+      </AcceptedFileContainer>
     );
   }
 

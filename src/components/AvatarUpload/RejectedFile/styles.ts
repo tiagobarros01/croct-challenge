@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
   width: 40%;
-  height: 180px;
+  height: 11.25rem;
 
   background: #f2f5f8;
 
-  padding: 32px;
+  padding: 2rem;
 
   display: flex;
 
@@ -20,12 +20,12 @@ export const Content = styled.div`
   flex-direction: row;
   align-items: center;
 
-  gap: 32px;
+  gap: 2rem;
 `;
 
 export const CircleWarning = styled.div`
-  width: 113px;
-  height: 113px;
+  width: 7.125rem;
+  height: 7.125rem;
 
   background: #c3cbd5;
 
@@ -41,9 +41,9 @@ export const Details = styled.div`
   p {
     color: #c64d32;
 
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   button {
@@ -53,7 +53,7 @@ export const Details = styled.div`
 
     text-decoration: underline;
 
-    font-size: 14px;
+    font-size: 0.875rem;
 
     cursor: pointer;
   }
