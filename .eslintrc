@@ -24,6 +24,11 @@
   "rules": {
     "no-unused-vars": "warn",
     "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "consistent-return": "off",
+    "react/jsx-props-no-spreading": "off",
+    "arrow-body-style": "off",
+    "no-nested-ternary": "off",
     "import/extensions": [
       "error",
       {

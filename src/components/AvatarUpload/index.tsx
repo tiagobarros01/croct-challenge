@@ -62,6 +62,7 @@ export function AvatarUpload({ action, ...rest }: AvatarUploadProps) {
 
     setCroppedImage({} as GetCroppedImageReturn);
     setFileImage(objectFile);
+    setZoom(1);
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
