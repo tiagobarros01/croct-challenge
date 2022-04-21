@@ -31,6 +31,12 @@ export const Container = styled.div<{ isActive: boolean }>`
   padding: 2rem;
 
   cursor: pointer;
+
+  @media (max-width: 678px) {
+    padding: 1rem;
+
+    width: 60%;
+  }
 `;
 
 export const Content = styled.div`
@@ -46,6 +52,8 @@ export const Content = styled.div`
     color: #677489;
 
     font-size: 0.875rem;
+
+    text-align: center;
   }
 
   div {
@@ -60,6 +68,10 @@ export const Content = styled.div`
     justify-content: center;
 
     gap: 0.75rem;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
   }
 `;
 
@@ -76,6 +88,10 @@ export const AcceptedFileContainer = styled(Container)<any>`
   gap: 3.75rem;
 
   cursor: inherit;
+
+  @media (max-width: 678px) {
+    gap: inherit;
+  }
 `;
 
 export const AcceptedFileContent = styled.div`
@@ -87,6 +103,10 @@ export const AcceptedFileContent = styled.div`
   align-items: center;
 
   gap: 2rem;
+
+  @media (max-width: 678px) {
+    flex-direction: column;
+  }
 `;
 
 export const AvatarContainer = styled.div`
@@ -116,6 +136,21 @@ export const AvatarContainer = styled.div`
       display: none;
     }
   }
+
+  @media (max-width: 858px) {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  @media (max-width: 678px) {
+    width: 5rem;
+    height: 4.5rem;
+  }
 `;
 
 export const Details = styled.div`
@@ -125,6 +160,14 @@ export const Details = styled.div`
 
   flex-direction: column;
 
+  @media (max-width: 678px) {
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 2rem;
+  }
+
   div {
     display: flex;
 
@@ -132,6 +175,10 @@ export const Details = styled.div`
     flex-direction: column !important;
 
     margin-bottom: 2.25rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 1rem;
+    }
 
     p {
       color: #677489;
@@ -170,6 +217,10 @@ export const Details = styled.div`
 
 export const CroppedImageContainer = styled(Container)`
   justify-content: initial;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
 `;
 
 export const ContentCroppedImage = styled.div`
@@ -184,22 +235,29 @@ export const ContentCroppedImage = styled.div`
   gap: 0.5rem;
 
   div {
-    p {
-      color: #495567;
-      font-weight: 500;
-    }
-
     display: flex;
 
     align-items: center;
     justify-content: center;
 
     gap: 0.75rem;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+
+    p {
+      color: #495567;
+
+      font-weight: 500;
+    }
   }
 
   p {
     color: #677489;
 
     font-size: 0.875rem;
+
+    text-align: center;
   }
 `;

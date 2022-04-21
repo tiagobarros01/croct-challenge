@@ -12,15 +12,32 @@ export const Container = styled.div`
 
   align-items: flex-start;
   justify-content: space-between;
+
+  @media (max-width: 678px) {
+    padding: 1rem;
+
+    width: 60%;
+  }
 `;
 
 export const Content = styled.div`
+  height: 100%;
+
   display: flex;
 
   flex-direction: row;
+
   align-items: center;
 
   gap: 2rem;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+
+    flex: 1;
+
+    gap: 2rem;
+  }
 `;
 
 export const CircleWarning = styled.div`
@@ -35,6 +52,26 @@ export const CircleWarning = styled.div`
 
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 858px) {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  @media (max-width: 678px) {
+    width: 5rem;
+    height: 4.5rem;
+  }
+
+  @media (max-width: 576px) {
+    width: 4rem;
+    height: 4rem;
+  }
 `;
 
 export const Details = styled.div`
@@ -56,6 +93,17 @@ export const Details = styled.div`
     font-size: 0.875rem;
 
     cursor: pointer;
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      text-align: center;
+    }
   }
 `;
 
