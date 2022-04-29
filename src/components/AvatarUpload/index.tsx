@@ -167,7 +167,10 @@ export function AvatarUpload({ action, ...rest }: AvatarUploadProps) {
           </Details>
         </AcceptedFileContent>
 
-        <CloseContainer onClick={handleTryAgain}>
+        <CloseContainer
+          data-testid="close-process-div"
+          onClick={handleTryAgain}
+        >
           <IoClose size="24" color="#677489" />
         </CloseContainer>
       </AcceptedFileContainer>
@@ -193,7 +196,7 @@ export function AvatarUpload({ action, ...rest }: AvatarUploadProps) {
 
         <p>Drop the image here or click to browse</p>
 
-        <input {...getInputProps()} />
+        <input data-testid="drop-input" {...getInputProps()} />
       </Content>
     </Container>
   );

@@ -29,6 +29,8 @@
     "react/jsx-props-no-spreading": "off",
     "arrow-body-style": "off",
     "no-nested-ternary": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-undef": "off",
     "import/extensions": [
       "error",
       {

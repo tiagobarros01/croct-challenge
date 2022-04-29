@@ -31,7 +31,7 @@ export function RejectedFile({ action, ...rest }: RejectedFileProps) {
         </Details>
       </Content>
 
-      <CloseContainer onClick={action}>
+      <CloseContainer data-testid="close-process-div" onClick={action}>
         <IoClose size="24" color="#677489" />
       </CloseContainer>
     </Container>
