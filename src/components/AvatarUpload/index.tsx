@@ -158,6 +158,7 @@ export function AvatarUpload({ action, ...rest }: AvatarUploadProps) {
                 aria-labelledby="Zoom"
                 onChange={(event) => setZoom(Number(event.target.value))}
                 className="slider"
+                data-testid="slider-input"
               />
             </div>
 

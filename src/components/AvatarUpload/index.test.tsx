@@ -72,34 +72,41 @@ describe("AvatarUpload", () => {
 
     const closeElement = await screen.findByTestId("close-process-div");
 
-    fireEvent.click(closeElement);
+    await userEvent.click(closeElement);
 
     const textElement = getByText(/Organization logo/i);
 
     expect(textElement).toBeInTheDocument();
   });
 
-  // it("Should save image", async () => {
-  //   const { getByTestId, findByText } = render(
-  //     <AvatarUpload action={() => {}} />
-  //   );
+  // not saving
+  it("Should save image", async () => {
+    const { getByTestId, findByText } = render(
+      <AvatarUpload action={() => {}} />
+    );
 
-  //   const inputElement = getByTestId("drop-input");
+    const inputElement = getByTestId("drop-input");
 
-  //   const file = new File(["file"], "test-image.png", {
-  //     type: "image/png",
-  //   });
+    const file = new File(["file"], "test-image.png", {
+      type: "image/png",
+    });
 
-  //   Object.defineProperty(inputElement, "files", {
-  //     value: [file],
-  //   });
+    Object.defineProperty(inputElement, "files", {
+      value: [file],
+    });
 
-  //   await waitFor(() => fireEvent.drop(inputElement));
+    await waitFor(() => fireEvent.drop(inputElement));
 
-  //   const savedButton = await findByText("Save");
+    await findByText("Crop");
 
-  //   fireEvent.click(savedButton);
+    const sliderElement = getByTestId("slider-input");
 
-  //   expect(await findByText("Crop")).toBeInTheDocument();
-  // });
+    fireEvent.change(sliderElement, {
+      target: { value: 1.2 },
+    });
+
+    const savedButton = await findByText("Save");
+
+    await userEvent.click(savedButton);
+  });
 });
